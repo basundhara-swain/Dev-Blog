@@ -1,0 +1,16 @@
+server:
+  port: 2024
+spring: #parent
+  datasource: #child of spring
+    url: ${url} #sub child of spring(Gave 2 space after data source because url comes after data source )
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 20
+#  profiles: # it is the chile of spring that's why we write like this
+#    active: dev
+  sql:
+    init:
+      mode: always
+
+prefix: "MB:"
